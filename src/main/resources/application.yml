@@ -1,0 +1,18 @@
+#spring.application.name=keyCloakDemo
+
+spring:
+  application:
+    name:keyCloakDemo
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://localhost:8181/realms/zeco
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: alibou-rest-api
+      principle-attribute: preferred_username
